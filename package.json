@@ -1,0 +1,23 @@
+{
+  "name": "eslint-config-fiskeridir",
+  "version": "1.0.0",
+  "description": "Rules for linting",
+  "main": "index.js",
+  "scripts": {
+    "tests-only": "babel-tape-runner ./test/test-*.js",
+     "test": "npm run --silent tests-only"
+  },
+  "keywords": [
+    "linting"
+  ],
+  "author": "Wenche Tollevsen",
+  "license": "ISC",
+  "peerDependencies": {
+    "eslint": ">= 3",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-tape-runner": "^2.0.1",
+    "tape": "^4.6.2"
+  }
+}
