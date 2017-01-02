@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-fiskeridir",
+  "name": "eslint-config-webteam",
   "version": "1.0.0",
   "description": "Rules for linting",
   "main": "index.js",
