@@ -7,8 +7,13 @@ A shared [ESLint](http://eslint.org/) configuration for the web team.
 Get started by running this command in the root of your project:
 
 ```sh
-npm install --save-dev eslint eslint-config-webteam eslint-plugin-import
+npm install --save-dev eslint eslint-plugin-import
 ```
+Add in your package.json file under devDependencies
+```
+"eslint-config-webteam": "git://github.com/miles-no/eslint-config-webteam.git"
+```
+and run npm i
 
 Then add an `.eslintrc` file to the root of your project with the following content
 
@@ -37,7 +42,7 @@ For projects using React, add the following to your `.eslintrc` file
 Then install [`eslint-plugin-react`](https://github.com/yannickcr/eslint-plugin-react) and  [`eslint-plugin-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y):
 
 ```sh
-npm install --save-dev eslint-plugin-react eslint-plugin-a11y
+npm install --save-dev eslint-plugin-react eslint-plugin-jsx-a11y
 ```
 This gives your linting of React with jsx and some accessibility linting for jsx.
 
@@ -50,7 +55,7 @@ NOTE: You will have to instruct your IDE to lint jsx file extensions (e.g. with 
 
 ## Override rules
 
-It is possible to override rules on project level. 
+It is possible to override rules on project level.
 
 ```json
 {
