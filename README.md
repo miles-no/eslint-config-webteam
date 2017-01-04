@@ -11,7 +11,7 @@ npm install --save-dev eslint eslint-plugin-import
 ```
 Add in your package.json file under devDependencies
 ```
-"eslint-config-webteam": "git://github.com/miles-no/eslint-config-webteam.git"
+"eslint-config-webteam": "git+https://github.com/miles-no/eslint-config-webteam.git"
 ```
 and run npm i
 
