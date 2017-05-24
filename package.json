@@ -1,12 +1,12 @@
 {
   "name": "eslint-config-webteam",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Rules for linting",
   "main": "index.js",
   "scripts": {
     "tests-only": "babel-tape-runner ./test/test-*.js",
-     "test": "npm run --silent tests-only",
-     "bump-version": "./node_modules/bump-version/bin/bump patch"
+    "test": "npm run --silent tests-only",
+    "bump-version": "./node_modules/bump-version/bin/bump patch"
   },
   "keywords": [
     "linting"
