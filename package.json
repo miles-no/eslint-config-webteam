@@ -11,6 +11,10 @@
   "keywords": [
     "linting"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miles-no/eslint.config-webteam.git"
+  },
   "author": "Wenche Tollevsen",
   "license": "ISC",
   "peerDependencies": {
