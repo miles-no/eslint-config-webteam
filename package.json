@@ -1,19 +1,20 @@
 {
   "name": "eslint-config-webteam",
-  "version": "1.0.2",
+  "version": "0.0.0-development",
   "description": "Rules for linting",
   "main": "index.js",
   "scripts": {
     "tests-only": "babel-tape-runner ./test/test-*.js",
     "test": "npm run --silent tests-only",
-    "bump-version": "./node_modules/bump-version/bin/bump patch"
+    "bump-version": "./node_modules/bump-version/bin/bump patch",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
     "linting"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/miles-no/eslint.config-webteam.git"
+    "url": "https://github.com/miles-no/eslint-config-webteam"
   },
   "author": "Wenche Tollevsen",
   "license": "ISC",
@@ -24,6 +25,12 @@
   "devDependencies": {
     "babel-tape-runner": "^2.0.1",
     "bump-version": "^0.5.0",
+    "condition-circle": "^1.5.0",
+    "semantic-release": "^6.3.6",
     "tape": "^4.6.2"
+  },
+  "release": {
+    "verifyConditions": "condition-circle",
+    "debug": true
   }
 }
