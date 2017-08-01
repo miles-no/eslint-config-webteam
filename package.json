@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-webteam",
-  "version": "0.0.0-development",
+  "version": "0.0.0-semantic-release",
   "description": "Rules for linting",
   "main": "index.js",
   "scripts": {
@@ -31,6 +31,6 @@
   },
   "release": {
     "verifyConditions": "condition-circle",
-    "debug": true
+    "debug": false
   }
 }
