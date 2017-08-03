@@ -6,7 +6,7 @@ module.exports = {
     sourceType: 'module',
     ecmaVersion: 6,
     ecmaFeatures: {
-      experimentalObjectRestSpread: true // enable support for the experimental object rest/spread properties 
+      experimentalObjectRestSpread: true //enable support for the experimental object rest/spread properties 
     }
   },
   extends: [
