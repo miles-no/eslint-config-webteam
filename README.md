@@ -3,6 +3,8 @@
 A shared [ESLint](http://eslint.org/) configuration for the web team.
 
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Dependency Status](https://david-dm.org/miles-no/eslint-config-webteam.svg)](https://david-dm.org/miles-no/eslint-config-webteam)
+[![devDependencies](https://david-dm.org/miles-no/eslint-config-webteam/dev-status.svg)](https://david-dm.org/miles-no/eslint-config-webteam?type=dev)
 
 ## Installation
 
