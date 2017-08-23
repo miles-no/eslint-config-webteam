@@ -10,10 +10,6 @@ module.exports = {
       jsx: true,
     },
   },
-  ecmaFeatures: {
-    jsx: true,
-  },
-
   // View link below for react rules documentation
   // https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules
   rules: {
@@ -43,7 +39,7 @@ module.exports = {
 
     // Forbid certain propTypes (any, array, object)
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
-    'react/forbid-prop-types': 'off',
+    'react/forbid-prop-types': ['error', { forbid: ['any'] }],
 
     // Enforce boolean attributes notation in JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
@@ -52,6 +48,11 @@ module.exports = {
     // Validate closing bracket location in JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md
     'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
+
+    // Validate closing tag location in JSX
+    // https://github.com/yannickcr/eslint-plugin-react/blob/9e13ae2c51e44872b45cc15bf1ac3a72105bdd0e/docs/rules/jsx-closing-tag-location.md
+    // TODO: enable, semver-minor
+    'react/jsx-closing-tag-location': 'off',
 
     // Enforce or disallow spaces inside of curly braces in JSX attributes
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md
@@ -147,6 +148,10 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-update-set-state.md
     'react/no-did-update-set-state': ['error'],
 
+     // Prevent usage of setState in componentWillUpdate
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-will-update-set-state.md
+    'react/no-will-update-set-state': 'error',
+
     // Prevent direct mutation of this.state
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md
     'react/no-direct-mutation-state': 'off',
@@ -186,11 +191,6 @@ module.exports = {
     // Prevent missing React when using JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
     'react/react-in-jsx-scope': 'error',
-
-    // Restrict file extensions that may be required
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-extension.md
-    // deprecated in favor of import/extensions
-    'react/require-extension': ['off', { extensions: ['.jsx', '.js'] }],
 
     // Require render() methods to return something
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md
@@ -245,7 +245,7 @@ module.exports = {
 
     // only .jsx files may have JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
-    'react/jsx-filename-extension': [1, { "extensions": [".js", ".jsx"] }],
+    'react/jsx-filename-extension': "off",
 
     // prevent accidental JS comments from being injected into JSX as text
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md
@@ -290,7 +290,63 @@ module.exports = {
 
     // Prevent passing of children as props
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md
-    'react/no-children-prop': 'error'
+    'react/no-children-prop': 'error',
+
+     // Validate whitespace in and around the JSX opening and closing brackets
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md
+    'react/jsx-tag-spacing': ['error', {
+      closingSlash: 'never',
+      beforeSelfClosing: 'always',
+      afterOpening: 'never'
+    }],
+
+    // Enforce spaces before the closing bracket of self-closing JSX elements
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-space-before-closing.md
+    // Deprecated in favor of jsx-tag-spacing
+    'react/jsx-space-before-closing': ['off', 'always'],
+
+    // Prevent usage of Array index in keys
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
+    'react/no-array-index-key': 'warn',
+
+    // Enforce a defaultProps definition for every prop that is not a required prop
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+    'react/require-default-props': 'off',
+
+    // Forbids using non-exported propTypes
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
+    'react/forbid-foreign-prop-types': 'off',
+
+    // Prevent void DOM elements from receiving children
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/void-dom-elements-no-children.md
+    'react/void-dom-elements-no-children': 'error',
+
+    // Enforce all defaultProps have a corresponding non-required PropType
+    // https://github.com/yannickcr/eslint-plugin-react/blob/9e13ae2c51e44872b45cc15bf1ac3a72105bdd0e/docs/rules/default-props-match-prop-types.md
+    // TODO: enable, semver-minor
+    'react/default-props-match-prop-types': ['off', { allowRequiredDefaults: false }],
+
+    // Prevent usage of shouldComponentUpdate when extending React.PureComponent
+    // https://github.com/yannickcr/eslint-plugin-react/blob/9e13ae2c51e44872b45cc15bf1ac3a72105bdd0e/docs/rules/no-redundant-should-component-update.md
+    // TODO: enable, semver-major
+    'react/no-redundant-should-component-update': 'off',
+
+    // Prevent unused state values
+    // https://github.com/yannickcr/eslint-plugin-react/pull/1103/files
+    // TODO: enable? semver-major
+    'react/no-unused-state': 'off',
+
+    // Enforces consistent naming for boolean props
+    // https://github.com/yannickcr/eslint-plugin-react/blob/73abadb697034b5ccb514d79fb4689836fe61f91/docs/rules/boolean-prop-naming.md
+    'react/boolean-prop-naming': ['off', {
+      propTypeNames: ['bool', 'mutuallyExclusiveTrueProps'],
+      rule: '^(is|has)[A-Z]([A-Za-z0-9]?)+',
+    }],
+
+    // Prevents common casing typos
+    // https://github.com/yannickcr/eslint-plugin-react/blob/73abadb697034b5ccb514d79fb4689836fe61f91/docs/rules/no-typos.md
+    // TODO: enable, semver-major
+    'react/no-typos': 'off',
   },
 
   settings: {

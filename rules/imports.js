@@ -16,10 +16,7 @@ module.exports = {
         extensions: ['.js', '.json']
       }
     },
-    'import/extensions': [
-      '.js',
-      '.jsx',
-    ],
+    'import/extensions': "off",
     'import/core-modules': [
     ],
     'import/ignore': [
@@ -114,7 +111,8 @@ module.exports = {
     // Ensure consistent use of file extension within the import path
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
     'import/extensions': ['error', 'always', {
-      js: 'never'
+      js: 'never',
+      jsx: 'always',
     }],
 
     // Enforce a convention in module import order

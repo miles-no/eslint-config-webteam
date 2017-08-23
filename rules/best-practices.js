@@ -10,14 +10,14 @@ module.exports = {
     // treat var statements as if they were block scoped
     'block-scoped-var': 'error',
 
-    // specify the maximum cyclomatic complexity allowed in a program
-    complexity: ['off', 11],
-
     // enforce that class methods use "this"
     // http://eslint.org/docs/rules/class-methods-use-this
     'class-methods-use-this': ['error', {
       exceptMethods: [],
     }],
+
+     // specify the maximum cyclomatic complexity allowed in a program
+    complexity: ['off', 11],
 
     // require return statements to either always or never specify values
     'consistent-return': 'error',
@@ -28,12 +28,12 @@ module.exports = {
     // require default case in switch statements
     'default-case': ['error', { commentPattern: '^no default$' }],
 
-    // encourages use of dot notation whenever possible
-    'dot-notation': ['error', { allowKeywords: true }],
-
     // enforces consistent newlines before or after dots
     // http://eslint.org/docs/rules/dot-location
     'dot-location': ['error', 'property'],
+
+    // encourages use of dot notation whenever possible
+    'dot-notation': ['error', { allowKeywords: true }],
 
     // require the use of === and !==
     // http://eslint.org/docs/rules/eqeqeq
@@ -98,10 +98,8 @@ module.exports = {
     // disallow reassignments of native objects or read-only globals
     // http://eslint.org/docs/rules/no-global-assign
     'no-global-assign': ['error', { exceptions: [] }],
-    // deprecated in favor of no-global-assign
-    'no-native-reassign': 'off',
 
-    // disallow implicit type conversions
+      // disallow implicit type conversions
     // http://eslint.org/docs/rules/no-implicit-coercion
     'no-implicit-coercion': ['off', {
       boolean: false,
@@ -166,7 +164,7 @@ module.exports = {
     // disallow reassignment of function parameters
     // disallow parameter object manipulation
     // rule: http://eslint.org/docs/rules/no-param-reassign.html
-    'no-param-reassign': ['error', { props: true }],
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['req', 'res'] }],
 
     // disallow usage of __proto__ property
     'no-proto': 'error',
@@ -250,8 +248,14 @@ module.exports = {
     // disallow use of the with statement
     'no-with': 'error',
 
+    // require using Error objects as Promise rejection reasons
+    'prefer-promise-reject-errors': 'off',
+
     // require use of the second argument for parseInt()
-    radix: 'error',
+    'radix': 'error',
+
+    // disallow async functions which have no await expression
+    'require-await': 'error',
 
     // requires to declare all vars on top of their containing scope
     'vars-on-top': 'error',
@@ -261,6 +265,6 @@ module.exports = {
     'wrap-iife': ['error', 'outside', { functionPrototypeMethods: false }],
 
     // require or disallow Yoda conditions
-    yoda: 'error'
+    'yoda': 'error'
   }
 };

@@ -19,7 +19,7 @@
   "author": "Wenche Tollevsen",
   "license": "ISC",
   "peerDependencies": {
-    "eslint": ">= 3",
+    "eslint": ">= 4",
     "eslint-plugin-import": "^2.2.0"
   },
   "devDependencies": {

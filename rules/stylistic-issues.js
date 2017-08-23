@@ -1,7 +1,13 @@
 module.exports = {
   rules: {
+    // enforce linebreaks after opening and before closing array brackets
+    'array-bracket-newline': ['error', { 'multiline': true, 'minItems': 3 }],
+
     // enforce spacing inside array brackets
     'array-bracket-spacing': ['error', 'never'],
+
+    // enforce line breaks after each array element
+    'array-element-newline': ['off', { multiline: true, minItems: 3 }],
 
     // enforce spacing inside single-line blocks
     // http://eslint.org/docs/rules/block-spacing
@@ -11,7 +17,31 @@ module.exports = {
     'brace-style': ['error', '1tbs', { allowSingleLine: true }],
 
     // require camel case names
-    camelcase: ['error', { properties: 'never' }],
+    'camelcase': ['error', { properties: 'never' }],
+
+    // enforce or disallow capitalization of the first letter of a comment
+    // http://eslint.org/docs/rules/capitalized-comments
+    'capitalized-comments': ['off', 'never', {
+      line: {
+        ignorePattern: '.*',
+        ignoreInlineComments: true,
+        ignoreConsecutiveComments: true,
+      },
+      block: {
+        ignorePattern: '.*',
+        ignoreInlineComments: true,
+        ignoreConsecutiveComments: true,
+      },
+    }],
+
+    // require trailing commas in multiline object literals
+    'comma-dangle': ['error', {
+      arrays: 'always-multiline',
+      objects: 'always-multiline',
+      imports: 'always-multiline',
+      exports: 'always-multiline',
+      functions: 'always-multiline',
+    }],
 
     // enforce spacing before and after comma
     'comma-spacing': ['error', { before: false, after: true }],
@@ -113,14 +143,7 @@ module.exports = {
     // enforces empty lines around comments
     'lines-around-comment': 'off',
 
-    // require or disallow newlines around directives
-    // http://eslint.org/docs/rules/lines-around-directive
-    'lines-around-directive': ['error', {
-      before: 'always',
-      after: 'always',
-    }],
-
-    // specify the maximum depth that blocks can be nested
+      // specify the maximum depth that blocks can be nested
     'max-depth': ['off', 4],
 
     // specify the maximum length of a line in your program
@@ -171,12 +194,6 @@ module.exports = {
     // http://eslint.org/docs/rules/new-parens
     'new-parens': 'error',
 
-    // allow/disallow an empty newline after var statement
-    'newline-after-var': 'off',
-
-    // http://eslint.org/docs/rules/newline-before-return
-    'newline-before-return': 'off',
-
     // enforces new line after each method call in the chain to make it
     // more readable and easy to maintain
     // http://eslint.org/docs/rules/newline-per-chained-call
@@ -193,7 +210,7 @@ module.exports = {
     // http://eslint.org/docs/rules/no-continue
     'no-continue': 'error',
 
-    // disallow comments inline after code
+     // disallow comments inline after code
     'no-inline-comments': 'off',
 
     // disallow if as the only statement in an else block
@@ -237,14 +254,9 @@ module.exports = {
     // http://eslint.org/docs/rules/no-restricted-syntax
     'no-restricted-syntax': [
       'error',
-      'ForInStatement',
-      'ForOfStatement',
       'LabeledStatement',
       'WithStatement',
     ],
-
-    // disallow space between function identifier and application
-    'no-spaced-func': 'error',
 
     // disallow tab characters entirely
     'no-tabs': 'error',
@@ -301,12 +313,15 @@ module.exports = {
     // enforce padding within blocks
     'padded-blocks': ['error', 'never'],
 
+    // require or disallow padding lines between statements
+    'padding-line-between-statements': 'off',
+
     // require quotes around object literal property names
     // http://eslint.org/docs/rules/quote-props.html
     'quote-props': ['error', 'as-needed', { keywords: false, unnecessary: true, numbers: false }],
 
     // specify whether double or single quotes should be used
-    quotes: ['error', 'single', { avoidEscape: true }],
+    'quotes': ['error', 'single', { avoidEscape: true }],
 
     // do not require jsdoc
     // http://eslint.org/docs/rules/require-jsdoc
@@ -317,6 +332,9 @@ module.exports = {
 
     // enforce spacing before and after semicolons
     'semi-spacing': ['error', { before: false, after: true }],
+
+    // enforce location of semicolons
+    'semi-style': ['off', 'last'],
 
     // requires object keys to be sorted
     'sort-keys': ['off', 'asc', { caseSensitive: false, natural: true }],
@@ -363,6 +381,12 @@ module.exports = {
         balanced: false,
       }
     }],
+
+    // enforce spacing around colons of switch statements
+    'switch-colon-spacing': ['off', { after: true, before: false }],
+
+     // Require or disallow spacing between template tags and their literals
+    'template-tag-spacing': ['off', 'never'],
 
     // require or disallow the Unicode Byte Order Mark
     // http://eslint.org/docs/rules/unicode-bom

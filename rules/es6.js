@@ -15,9 +15,7 @@ module.exports = {
     // enforces no braces where they can be omitted
     // http://eslint.org/docs/rules/arrow-body-style
     // TODO: enable requireReturnForObjectLiteral?
-    'arrow-body-style': ['error', 'as-needed', {
-      requireReturnForObjectLiteral: false,
-    }],
+    'arrow-body-style': ['error', 'always'],
 
     // require parens in arrow function arguments
     // http://eslint.org/docs/rules/arrow-parens
@@ -25,7 +23,7 @@ module.exports = {
       requireForBlockBody: true,
     }],
 
-    // require space before/after arrow function's arrow
+    // require space before/after arrow function's arrowr
     // http://eslint.org/docs/rules/arrow-spacing
     'arrow-spacing': ['error', { before: true, after: true }],
 
@@ -107,14 +105,24 @@ module.exports = {
       ignoreReadBeforeAssign: true,
     }],
 
+    // Prefer destructuring from arrays and objects
+    // http://eslint.org/docs/rules/prefer-destructuring
+    'prefer-destructuring': ['off', {
+      VariableDeclarator: {
+        array: false,
+        object: true,
+      },
+      AssignmentExpression: {
+        array: true,
+        object: true,
+      },
+    }, {
+      enforceForRenamedProperties: false,
+    }],
+
     // disallow parseInt() in favor of binary, octal, and hexadecimal literals
     // http://eslint.org/docs/rules/prefer-numeric-literals
     'prefer-numeric-literals': 'error',
-
-    // suggest using Reflect methods where applicable
-    // http://eslint.org/docs/rules/prefer-reflect
-    // TODO: enable?
-    'prefer-reflect': 'off',
 
     // use rest parameters instead of arguments
     // http://eslint.org/docs/rules/prefer-rest-params

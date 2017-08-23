@@ -1,13 +1,16 @@
 module.exports = {
   rules: {
-    // require trailing commas in multiline object literals
-    'comma-dangle': ['error', {
-      arrays: 'always-multiline',
-      objects: 'always-multiline',
-      imports: 'always-multiline',
-      exports: 'always-multiline',
-      functions: 'always-multiline',
-    }],
+     // enforce “for” loop update clause moving the counter in the right direction.
+    'for-direction': 'error',
+
+    // enforce return statements in getters
+    'getter-return': 'error',
+
+    // disallow await inside of loops
+    'no-await-in-loop': 'error',
+
+    // disallow comparing against -0
+    'no-compare-neg-zero': 'error',
 
     // disallow assignment in conditional expressions
     'no-cond-assign': ['error', 'always'],
@@ -100,9 +103,6 @@ module.exports = {
     // disallow negating the left operand of relational operators
     // http://eslint.org/docs/rules/no-unsafe-negation
     'no-unsafe-negation': 'error',
-    // disallow negation of the left operand of an in expression
-    // deprecated in favor of no-unsafe-negation
-    'no-negated-in-lhs': 'off',
 
     // disallow comparisons with the value NaN
     'use-isnan': 'error',
