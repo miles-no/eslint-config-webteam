@@ -25,7 +25,7 @@
   "devDependencies": {
     "babel-tape-runner": "^2.0.1",
     "bump-version": "^0.5.0",
-    "condition-circle": "^1.5.0",
+    "condition-circle": "1.5.0",
     "semantic-release": "^6.3.6",
     "tape": "^4.6.2"
   },
