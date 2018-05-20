@@ -4,7 +4,7 @@ module.exports = {
   },
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 6,
+    ecmaVersion: 2017,
     ecmaFeatures: {
       experimentalObjectRestSpread: true //enable support for the experimental object rest/spread properties 
     }
