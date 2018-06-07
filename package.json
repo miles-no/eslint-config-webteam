@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "babel-tape-runner": "^2.0.1",
+    "nsp": "^3.2.1",
     "semantic-release": "^15.5.1",
     "tape": "^4.9.0"
   },
