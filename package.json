@@ -6,8 +6,7 @@
   "scripts": {
     "tests-only": "babel-tape-runner ./test/test-*.js",
     "test": "npm run --silent tests-only",
-    "bump-version": "./node_modules/bump-version/bin/bump patch",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "nsp": "nsp check"
   },
   "keywords": [
     "linting"
@@ -24,13 +23,8 @@
   },
   "devDependencies": {
     "babel-tape-runner": "^2.0.1",
-    "bump-version": "^0.5.0",
-    "condition-circle": "1.5.0",
-    "semantic-release": "^6.3.6",
-    "tape": "^4.6.2"
+    "semantic-release": "^15.5.1",
+    "tape": "^4.9.0"
   },
-  "release": {
-    "verifyConditions": "condition-circle",
-    "debug": false
-  }
+  "dependencies": {}
 }
